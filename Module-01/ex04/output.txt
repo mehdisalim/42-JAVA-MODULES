@@ -1,0 +1,34 @@
+New User added: id: 1 | name: mehdi salim | balance: 0
+New User added: id: 2 | name: mehdi salim | balance: 124
+New User added: id: 3 | name: mehdi salim | balance: 248
+New User added: id: 4 | name: mehdi salim | balance: 372
+New User added: id: 5 | name: mehdi salim | balance: 496
+New User added: id: 6 | name: mehdi salim | balance: 620
+New User added: id: 7 | name: mehdi salim | balance: 744
+New User added: id: 8 | name: mehdi salim | balance: 868
+New User added: id: 9 | name: mehdi salim | balance: 992
+New User added: id: 10 | name: mehdi salim | balance: 1116
+new transaction of type credit has been created: id: 0e970981-56a6-434a-8508-34c56145ad3d | recipient: (id: 1 | name: mehdi salim | balance: 41) | sender: (id: 9 | name: mehdi salim | balance: 951) | transaction category: CREDIT | transaction amount: 41
+new transaction of type debit has been created: id: 0e970981-56a6-434a-8508-34c56145ad3d | recipient: (id: 1 | name: mehdi salim | balance: 41) | sender: (id: 9 | name: mehdi salim | balance: 951) | transaction category: DEBIT | transaction amount: -41
+new transaction of type credit has been created: id: dfe76096-d74f-4355-96cb-25891fdf937f | recipient: (id: 2 | name: mehdi salim | balance: 206) | sender: (id: 8 | name: mehdi salim | balance: 786) | transaction category: CREDIT | transaction amount: 82
+new transaction of type debit has been created: id: dfe76096-d74f-4355-96cb-25891fdf937f | recipient: (id: 2 | name: mehdi salim | balance: 206) | sender: (id: 8 | name: mehdi salim | balance: 786) | transaction category: DEBIT | transaction amount: -82
+new transaction of type credit has been created: id: 324d34f5-e5ad-4325-ad24-26814ccd56c4 | recipient: (id: 3 | name: mehdi salim | balance: 371) | sender: (id: 7 | name: mehdi salim | balance: 621) | transaction category: CREDIT | transaction amount: 123
+new transaction of type debit has been created: id: 324d34f5-e5ad-4325-ad24-26814ccd56c4 | recipient: (id: 3 | name: mehdi salim | balance: 371) | sender: (id: 7 | name: mehdi salim | balance: 621) | transaction category: DEBIT | transaction amount: -123
+new transaction of type credit has been created: id: ac8cbc4c-094a-469b-9b28-0bc238e892d9 | recipient: (id: 4 | name: mehdi salim | balance: 536) | sender: (id: 6 | name: mehdi salim | balance: 456) | transaction category: CREDIT | transaction amount: 164
+new transaction of type debit has been created: id: ac8cbc4c-094a-469b-9b28-0bc238e892d9 | recipient: (id: 4 | name: mehdi salim | balance: 536) | sender: (id: 6 | name: mehdi salim | balance: 456) | transaction category: DEBIT | transaction amount: -164
+
+
+
+
+id: 0e970981-56a6-434a-8508-34c56145ad3d | recipient: (id: 1 | name: mehdi salim | balance: 41) | sender: (id: 9 | name: mehdi salim | balance: 951) | transaction category: CREDIT | transaction amount: 41
+id: 0e970981-56a6-434a-8508-34c56145ad3d | recipient: (id: 1 | name: mehdi salim | balance: 41) | sender: (id: 9 | name: mehdi salim | balance: 951) | transaction category: DEBIT | transaction amount: -41
+
+
+
+
+id: 0e970981-56a6-434a-8508-34c56145ad3d | recipient: (id: 1 | name: mehdi salim | balance: 41) | sender: (id: 9 | name: mehdi salim | balance: 951) | transaction category: DEBIT | transaction amount: -41
+
+
+
+Print unpaired transactions: 
+
