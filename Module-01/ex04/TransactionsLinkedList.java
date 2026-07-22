@@ -25,6 +25,22 @@ public class TransactionsLinkedList implements TransactionsList {
         length++;
     }
 
+
+
+    @Override
+    public Transaction getTransactionById(final UUID transactionId) throws TransactionNotFoundException {
+        TransactionNode tmp = tail;
+        while (tmp != null) {
+            final Transaction trans = tmp.transaction;
+            if (trans.getId() == transactionId)
+                return trans; 
+            tmp = tmp.next;
+        }
+        return null;
+    }
+
+
+
     @Override
     public Transaction deleteTransactionById(final UUID id) {
         TransactionNode tmpNode = tail;
@@ -38,6 +54,7 @@ public class TransactionsLinkedList implements TransactionsList {
                     }
                 } else {
                     tmpNode = tmpNode.next;
+                    tmpNode.previous = null;
                     tail = tmpNode;
                 }
                 length--;

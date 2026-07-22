@@ -26,9 +26,9 @@ public class TransactionsService {
      * recipient and sender. IDs of both transactions must be equal
      * 
      */
-    public void transfer(final int recipientId, final int senderId , final int transferAmount) {
+    public void transfer(final int recipientId, final int senderId , final int transferAmount) throws IllegalTransactionException {
         if (getUserBalance(senderId) < transferAmount) {
-            throw new RuntimeException("IllegalTransactionException");
+            throw new IllegalTransactionException();
         }
 
         final User sender = users.getUserById(senderId);
@@ -57,8 +57,6 @@ public class TransactionsService {
         sender.addTransaction(creditTransaction);
         recipient.addTransaction(creditTransaction);
 
-        sender.addTransaction(debitTransaction);
-        recipient.addTransaction(debitTransaction);
 
         System.out.println("new transaction of type credit has been created: " + creditTransaction);
         System.out.println("new transaction of type debit has been created: " + debitTransaction);
@@ -75,6 +73,7 @@ public class TransactionsService {
         users.getUserById(targetedUserId)
             .getTransactions()
             .deleteTransactionById(transactionId);
+        System.out.println("deleting transaction with id : " + transactionId + " and user id : " + targetedUserId);
         
     }
 
@@ -84,10 +83,13 @@ public class TransactionsService {
         for (int i = 0; i < users.size(); i++) {
             final User user = users.getUser(i);
             final TransactionsList userTransactions = user.getTransactions();
-            final Transaction[] arrayOfTransactions = userTransactions.toArray();
-            for (Transaction transaction : arrayOfTransactions) {
-                if (transaction.getSender() == null || transaction.getRecipient() == null) {
-                    unpairedTransactions.addTransaction(transaction);
+            for (Transaction tran : userTransactions.toArray()) {
+                User user2 = tran.getRecipient();
+                if (user2.getId() == user.getId())
+                    user2 = tran.getSender();
+                final Transaction foundedTransaction = user2.getTransactions().getTransactionById(tran.getId());
+                if (foundedTransaction == null) {
+                    unpairedTransactions.addTransaction(tran);
                 }
             }
         }

@@ -21,13 +21,13 @@ public class UsersArrayList implements UsersList {
     }
 
     @Override
-    public User getUserById(final int id) {
+    public User getUserById(final int id) throws UserNotFoundException {
         for (User user : users) {
             if (user.getId() == id) {
                 return user;
             }
         }
-        throw new RuntimeException("UserNotFoundException");
+        throw new UserNotFoundException();
     }
 
     @Override
