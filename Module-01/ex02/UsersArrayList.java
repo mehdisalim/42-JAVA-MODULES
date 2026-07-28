@@ -22,18 +22,19 @@ public class UsersArrayList implements UsersList {
 
     @Override
     public User getUserById(final int id) throws UserNotFoundException {
-        for (User user : users) {
-            if (user.getId() == id) {
-                return user;
+        for (int i = 0; i < size; i++) {
+            if (users[i].getId() == id) {
+                return users[i];
             }
         }
         throw new UserNotFoundException();
     }
 
+
     @Override
-    public User getUser(final int index) throws IllegalArgumentException{
+    public User getUser(final int index) throws OutOfBoundException {
         if (index < 0 || index > size)
-            throw new IllegalArgumentException("Out Of Bound exception !");
+            throw new OutOfBoundException();
         return users[index];
     }
 

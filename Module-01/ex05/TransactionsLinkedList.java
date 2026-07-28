@@ -62,7 +62,7 @@ public class TransactionsLinkedList implements TransactionsList {
             }
             tmpNode = tmpNode.next;
         }
-        throw new TransactionNotFoundException(id.toString());
+        return null;
     }
 
     @Override

@@ -11,12 +11,16 @@ public class TransactionsService {
     // Adding User.
     public void addUser(final User user) {
         users.addUser(user);
-        System.out.println("New User added: " + user);
+        System.out.println("   User with id = " + user.getId() + " is added");
     }
 
     // Recieve User's Balance.
     public int getUserBalance(final int userId) {
         return users.getUserById(userId).getBalance();
+    }
+
+    public User getUser(final int userId) {
+        return users.getUserById(userId);
     }
 
     /**
@@ -56,7 +60,6 @@ public class TransactionsService {
 
         sender.addTransaction(creditTransaction);
         recipient.addTransaction(creditTransaction);
-
     }
 
     // Retrieving transfers of a specific user (an ARRAY of transfers is returned).
@@ -65,12 +68,12 @@ public class TransactionsService {
     }
     
     // Removing a transaction by ID for a specific user (transaction ID and user ID are specified)
-    public void deleteTransaction(final UUID transactionId, final int targetedUserId) {
-        users.getUserById(targetedUserId)
+    public Transaction deleteTransaction(final UUID transactionId, final int targetedUserId) {
+        final Transaction deletedTransaction = users.getUserById(targetedUserId)
             .getTransactions()
             .deleteTransactionById(transactionId);
         System.out.println("deleting transaction with id : " + transactionId + " and user id : " + targetedUserId);
-        
+        return deletedTransaction;
     }
 
     // Check validity of transactions (returns an ARRAY of unpaired transactions).

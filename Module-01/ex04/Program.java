@@ -37,8 +37,6 @@ public class Program {
         System.out.println();
 
         transService.deleteTransaction(transService.getTransactions(1)[0].getId(), 1);
-        transService.deleteTransaction(transService.getTransactions(1)[0].getId(), 1);
-        transService.deleteTransaction(transService.getTransactions(1)[0].getId(), 1);
  
 
 

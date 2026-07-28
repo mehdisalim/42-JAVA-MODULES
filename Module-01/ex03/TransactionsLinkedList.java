@@ -13,6 +13,20 @@ public class TransactionsLinkedList implements TransactionsList {
         tail = null;
     }
 
+
+
+
+    public Transaction getTransactionById(final UUID transactionId) throws TransactionNotFoundException {
+        TransactionNode tmp = tail;
+        while (tmp != null) {
+            final Transaction trans = tmp.transaction;
+            if (trans.getId() == transactionId)
+                return trans; 
+            tmp = tmp.next;
+        }
+        return null;
+    }
+
     @Override
     public void addTransaction(final Transaction transaction) {
         if (tail == null) {
@@ -43,7 +57,7 @@ public class TransactionsLinkedList implements TransactionsList {
             }
             tmpNode = tmpNode.next;
         }
-        return null;
+        throw new TransactionNotFoundException();
     }
 
     @Override

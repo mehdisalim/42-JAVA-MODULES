@@ -15,7 +15,7 @@ public class Program {
                 numberOfPrimes++;
             }
         }
-        System.out.println("Count of coffee-request : " + numberOfPrimes);
+        System.out.println("Count of coffee-request - " + numberOfPrimes);
         scan.close();
     }
 
@@ -31,7 +31,7 @@ public class Program {
         if (number < 2) 
             return false;
         int i = 2;
-        while (i < number / i) {
+        while (i <= number / i) {
             if (number % i == 0) {
                 return false;
             }
