@@ -1,10 +1,8 @@
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Program {
@@ -37,7 +35,7 @@ public class Program {
                     continue ;
                 }
                 resultFile.write(fileExtension.getBytes());
-                resultFile.write('\n');
+                resultFile.write("\n".getBytes());
                 System.out.println("PROCESSED");
             }
 
@@ -53,10 +51,8 @@ public class Program {
         try (
             final FileInputStream fileInputStream = new FileInputStream(fileName);
         ) {
-            System.out.println("fileInputStream.getFD().valid(): " + fileInputStream.getFD().valid());
             final byte[] fileSignature = new byte[16];
             fileInputStream.read(fileSignature);
-            System.out.println("fileSignature: " + fileSignature + " fileSignature length: " + fileSignature.length);
             if (fileSignature.length <= 0)
                 return null;
             return getFileExtention(fileSignature);
