@@ -1,18 +1,20 @@
 package fr.fortytwo.printer.logic;
 
-import java.io.File;
+
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
-public class ImageConverter {
+public class ImageLoader {
     private final BufferedImage image;
 
-    public ImageConverter(final String imagePath) throws IOException {
-        this.image = ImageIO.read(new File(imagePath));
+    public ImageLoader() throws IOException {
+        final InputStream input = ImageLoader.class.getResourceAsStream("/image.bmp");
+        this.image = ImageIO.read(input);
     }
 
     public void printImageAsChars(final char whiteColorChar, final char blackColorChar) {
