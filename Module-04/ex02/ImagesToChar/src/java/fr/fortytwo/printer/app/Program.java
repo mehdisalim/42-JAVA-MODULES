@@ -18,6 +18,7 @@ public class Program {
         JCommander jCommander = JCommander.newBuilder()
                 .addObject(cArgs)
                 .build();
+
                 
         jCommander.parse(args);
 

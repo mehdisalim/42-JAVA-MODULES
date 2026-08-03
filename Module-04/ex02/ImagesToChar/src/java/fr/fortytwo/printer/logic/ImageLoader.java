@@ -4,34 +4,39 @@ package fr.fortytwo.printer.logic;
 import java.io.IOException;
 import java.io.InputStream;
 
-import javax.imageio.ImageIO;
-
 import com.diogonunes.jcdp.color.ColoredPrinter;
 import com.diogonunes.jcdp.color.ColoredPrinter.Builder;
+import com.diogonunes.jcdp.color.api.Ansi.Attribute;
+import com.diogonunes.jcdp.color.api.Ansi.BColor;
+import com.diogonunes.jcdp.color.api.Ansi.FColor;
 
-import java.awt.Color;
-import java.awt.image.BufferedImage;
+import fr.fortytwo.printer.logic.BmpPixelParser.BmpImage;
+
+
 
 public class ImageLoader {
-    private final BufferedImage image;
+    private final BmpImage image;
 
     public ImageLoader() throws IOException {
-        final InputStream input = ImageLoader.class.getResourceAsStream("/image.bmp");
-        this.image = ImageIO.read(input);
+        final InputStream in = ImageLoader.class.getResourceAsStream("/resources/image.bmp");
+        this.image = BmpPixelParser.parse(in);
     }
 
     public void printImageAsChars(final CommandLineArgs args) {
-        final ColoredPrinter cp = new ColoredPrinter(new Builder(0, false));
+        final ColoredPrinter cp = new ColoredPrinter(new Builder(1, false));
+        final BColor whiteColor = BColor.valueOf(args.getWhite().toUpperCase());
+        final BColor blackColor = BColor.valueOf(args.getBlack().toUpperCase());
+
         for (int h = 0; h < this.image.getHeight(); h++) {
             for (int w = 0; w < this.image.getWidth(); w++) {
                 final int rgbColor = this.image.getRGB(w, h);
-                if (rgbColor == Color.BLACK.getRGB()) {
-                    cp.print(args.getBlack());
+                if (rgbColor == -1) {
+                    cp.print(" ", Attribute.NONE, FColor.NONE, whiteColor);
                 } else {
-                    cp.print(args.getWhite());
+                    cp.print(" ", Attribute.NONE, FColor.NONE, blackColor);
                 }
             }
-            cp.println("\n");
+            cp.println(" ");
         }
     }
 
