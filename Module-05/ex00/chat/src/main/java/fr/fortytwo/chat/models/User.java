@@ -7,7 +7,7 @@ public class User {
     private Long id;
     private String login;
     private String password;
-    private List<Chatroom> myRooms;
+    private List<Chatroom> rooms;
     private List<Chatroom> sharedRooms;
 
     public User() {}
@@ -16,13 +16,13 @@ public class User {
     public User(final Long id,
         final String login,
         final String password,
-        final List<Chatroom> myRooms,
+        final List<Chatroom> rooms,
         final List<Chatroom> sharedRooms
     ) {
         this.id = id;
         this.login = login;
         this.password = password;
-        this.myRooms = myRooms;
+        this.rooms = rooms;
         this.sharedRooms = sharedRooms;
     }
 
@@ -39,8 +39,8 @@ public class User {
         this.password = password;
     }
 
-    public void setMyRooms(final List<Chatroom> myRooms) {
-        this.myRooms = myRooms;
+    public void setRooms(final List<Chatroom> rooms) {
+        this.rooms = rooms;
     }
 
     public void setSharedRooms(final List<Chatroom> sharedRooms) {
@@ -60,8 +60,8 @@ public class User {
         return this.password;
     }
 
-    public List<Chatroom> getMyRooms() {
-        return this.myRooms;
+    public List<Chatroom> getRooms() {
+        return this.rooms;
     }
 
     public List<Chatroom> getSharedRooms() {
@@ -75,7 +75,7 @@ public class User {
                 "id=" + id +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
-                ", createdRooms=" + myRooms +
+                ", createdRooms=" + rooms +
                 ", rooms=" + sharedRooms +
                 '}';
     }
@@ -91,7 +91,7 @@ public class User {
         if (!id.equals(user.id)) return false;
         if (!login.equals(user.login)) return false;
         if (!password.equals(user.password)) return false;
-        if (!myRooms.equals(user.myRooms)) return false;
+        if (!rooms.equals(user.rooms)) return false;
         return sharedRooms.equals(user.sharedRooms);
     }
 

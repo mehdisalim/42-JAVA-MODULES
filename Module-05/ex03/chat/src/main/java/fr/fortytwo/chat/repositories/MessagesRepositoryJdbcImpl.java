@@ -9,6 +9,7 @@ import java.util.Optional;
 
 import javax.sql.DataSource;
 
+import fr.fortytwo.chat.exceptions.UnanbleToUpdateException;
 import fr.fortytwo.chat.models.Chatroom;
 import fr.fortytwo.chat.models.Message;
 import fr.fortytwo.chat.models.User;
@@ -75,7 +76,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
                         null,
                         null
                 );
-    
+
                 Message message = new Message(
                         rs.getLong("message_id"),
                         author,
@@ -91,8 +92,6 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
             throw new RuntimeException("Unable to find message with id = " + id, e);
         }
     }
-
-
 
 
     @Override
@@ -185,5 +184,64 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
             throw new UnanbleToSaveException("Unable to save message", e);
         }
     }
+
     
+    @Override
+    public void update(final Message message) {
+    
+        final String sql = """
+            UPDATE messages
+            SET
+                author_id = ?,
+                room_id = ?,
+                text = ?,
+                created_at = ?
+            WHERE id = ?;
+            """;
+    
+        try (
+            Connection connection = dataSource.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql)
+        ) {
+    
+            // author_id
+            if (message.getAuthor() != null) {
+                statement.setLong(1, message.getAuthor().getId());
+            } else {
+                statement.setNull(1, java.sql.Types.BIGINT);
+            }
+    
+            // room_id
+            if (message.getRoom() != null) {
+                statement.setLong(2, message.getRoom().getId());
+            } else {
+                statement.setNull(2, java.sql.Types.BIGINT);
+            }
+    
+            // text
+            statement.setString(3, message.getText());
+    
+            // created_at
+            if (message.getCreatedAt() != null) {
+                statement.setTimestamp(
+                    4,
+                    java.sql.Timestamp.valueOf(message.getCreatedAt())
+                );
+            } else {
+                statement.setNull(4, java.sql.Types.TIMESTAMP);
+            }
+    
+            // id
+            statement.setLong(5, message.getId());
+    
+            statement.executeUpdate();
+    
+        } catch (SQLException e) {
+            throw new UnanbleToUpdateException(
+                "Unable to update message with id = " + message.getId(),
+                e
+            );
+        }
+    }
+
 }

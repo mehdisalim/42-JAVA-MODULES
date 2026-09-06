@@ -76,7 +76,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
                         author,
                         room,
                         rs.getString("text"),
-                        rs.getTimestamp("created_at").toLocalDateTime()
+                        rs.getTimestamp("created_at") != null ? rs.getTimestamp("created_at").toLocalDateTime() : null
                 );
     
                 return Optional.of(message);

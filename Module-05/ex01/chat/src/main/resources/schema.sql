@@ -74,10 +74,10 @@ CREATE TABLE chatroom_users (
 -- =========================================
 CREATE TABLE messages (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    author_id BIGINT NOT NULL,
-    room_id BIGINT NOT NULL,
-    text TEXT NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    author_id BIGINT,
+    room_id BIGINT,
+    text TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT fk_message_author
         FOREIGN KEY (author_id)
