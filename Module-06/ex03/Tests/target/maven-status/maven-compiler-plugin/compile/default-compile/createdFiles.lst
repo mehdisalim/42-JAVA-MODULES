@@ -1,0 +1,10 @@
+fr\fortytwo\services\UsersServiceImpl.class
+fr\fortytwo\models\User.class
+fr\fortytwo\numbers\IllegalNumberException.class
+fr\fortytwo\numbers\NumberWorker.class
+fr\fortytwo\repositories\ProductsRepositoryJdbcImpl.class
+fr\fortytwo\repositories\UsersRepository.class
+fr\fortytwo\exceptions\AlreadyAuthenticatedException.class
+fr\fortytwo\exceptions\EntityNotFoundException.class
+fr\fortytwo\models\Product.class
+fr\fortytwo\repositories\ProductsRepository.class
