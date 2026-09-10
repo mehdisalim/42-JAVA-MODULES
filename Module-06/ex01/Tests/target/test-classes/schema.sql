@@ -1,5 +1,0 @@
-CREATE TABLE IF NOT EXISTS product (
-    id    BIGINT      NOT NULL PRIMARY KEY,
-    name  VARCHAR(255) NOT NULL,
-    price DOUBLE      NOT NULL
-);
