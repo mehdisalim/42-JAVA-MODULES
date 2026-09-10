@@ -1,5 +1,0 @@
-fr\fortytwo\numbers\IllegalNumberException.class
-fr\fortytwo\models\Product.class
-fr\fortytwo\repositories\ProductsRepository.class
-fr\fortytwo\numbers\NumberWorker.class
-fr\fortytwo\repositories\ProductsRepositoryJdbcImpl.class

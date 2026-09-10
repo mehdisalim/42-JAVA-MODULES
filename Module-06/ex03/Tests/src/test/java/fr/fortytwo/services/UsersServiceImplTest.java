@@ -17,6 +17,7 @@ class UsersServiceImplTest {
     private UsersRepository usersRepository;
     private UsersServiceImpl usersService;
 
+
     @BeforeEach
     void setUp() {
         usersRepository = Mockito.mock(UsersRepository.class);

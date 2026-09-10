@@ -16,14 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductsRepositoryJdbcImplTest {
 
-    // -----------------------------------------------------------------------
-    // Pre-prepared model objects that match the seed data in data.sql
-    // -----------------------------------------------------------------------
+
     final List<Product> EXPECTED_FIND_ALL_PRODUCTS = Arrays.asList(
-            new Product(1L, "Apple",      0.99),
-            new Product(2L, "Banana",     0.49),
-            new Product(3L, "Cherry",     2.99),
-            new Product(4L, "Date",       4.50),
+            new Product(1L, "Apple", 0.99),
+            new Product(2L, "Banana", 0.49),
+            new Product(3L, "Cherry", 2.99),
+            new Product(4L, "Date", 4.50),
             new Product(5L, "Elderberry", 7.99)
     );
 
@@ -31,9 +29,6 @@ class ProductsRepositoryJdbcImplTest {
 
     final Product EXPECTED_UPDATED_PRODUCT = new Product(2L, "Banana Gold", 1.49);
 
-    // -----------------------------------------------------------------------
-    // Infrastructure — fresh DB per test
-    // -----------------------------------------------------------------------
     private EmbeddedDatabase embeddedDatabase;
     private ProductsRepository repository;
 
@@ -53,9 +48,6 @@ class ProductsRepositoryJdbcImplTest {
         embeddedDatabase.shutdown();
     }
 
-    // -----------------------------------------------------------------------
-    // findAll
-    // -----------------------------------------------------------------------
 
     @Test
     void testFindAllReturnsAllProducts() {
@@ -69,9 +61,6 @@ class ProductsRepositoryJdbcImplTest {
         assertEquals(5, repository.findAll().size());
     }
 
-    // -----------------------------------------------------------------------
-    // findById
-    // -----------------------------------------------------------------------
 
     @Test
     void testFindByIdReturnsCorrectProduct() {
@@ -86,9 +75,6 @@ class ProductsRepositoryJdbcImplTest {
         assertFalse(actual.isPresent(), "findById with unknown id must return empty Optional");
     }
 
-    // -----------------------------------------------------------------------
-    // save
-    // -----------------------------------------------------------------------
 
     @Test
     void testSaveInsertsNewProduct() {
@@ -106,9 +92,6 @@ class ProductsRepositoryJdbcImplTest {
         assertEquals(6, repository.findAll().size());
     }
 
-    // -----------------------------------------------------------------------
-    // update
-    // -----------------------------------------------------------------------
 
     @Test
     void testUpdateChangesProductFields() {
@@ -126,9 +109,6 @@ class ProductsRepositoryJdbcImplTest {
                 "update() must not insert or delete rows");
     }
 
-    // -----------------------------------------------------------------------
-    // delete
-    // -----------------------------------------------------------------------
 
     @Test
     void testDeleteRemovesProduct() {
