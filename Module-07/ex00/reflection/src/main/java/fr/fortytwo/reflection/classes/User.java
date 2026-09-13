@@ -1,5 +1,7 @@
 package fr.fortytwo.reflection.classes;
 
+import java.util.StringJoiner;
+
 public class User {
     private String firstName;
     private String lastName;
