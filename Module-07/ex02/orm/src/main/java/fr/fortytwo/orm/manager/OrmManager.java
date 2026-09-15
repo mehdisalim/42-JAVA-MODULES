@@ -20,7 +20,6 @@ public class OrmManager {
     }
 
     private void initTables() {
-        // Drop and recreate tables for annotated entities (e.g., User)
         Class<fr.fortytwo.orm.models.User> clazz = fr.fortytwo.orm.models.User.class;
         if (!clazz.isAnnotationPresent(OrmEntity.class)) return;
 
