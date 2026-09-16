@@ -3,13 +3,11 @@ package fr.fortytwo.orm.manager;
 import fr.fortytwo.orm.annotations.OrmColumn;
 import fr.fortytwo.orm.annotations.OrmColumnId;
 import fr.fortytwo.orm.annotations.OrmEntity;
-
-import javax.sql.DataSource;
 import java.lang.reflect.Field;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringJoiner;
+import javax.sql.DataSource;
+
 
 public class OrmManager {
     private final DataSource dataSource;
