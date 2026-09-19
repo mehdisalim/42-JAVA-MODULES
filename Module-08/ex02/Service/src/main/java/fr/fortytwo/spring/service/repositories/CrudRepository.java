@@ -1,4 +1,4 @@
-package edu.school21.spring.service.repositories;
+package fr.fortytwo.spring.service.repositories;
 
 import java.util.List;
 

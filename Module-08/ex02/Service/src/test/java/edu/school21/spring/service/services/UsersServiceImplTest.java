@@ -1,6 +1,7 @@
-package edu.school21.spring.service.services;
+package fr.fortytwo.spring.service.services;
 
 import edu.school21.spring.service.config.TestApplicationConfig;
+import edu.school21.spring.service.services.UsersService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

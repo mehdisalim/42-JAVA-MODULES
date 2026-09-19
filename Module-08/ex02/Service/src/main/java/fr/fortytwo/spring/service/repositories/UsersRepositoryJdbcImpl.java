@@ -1,15 +1,13 @@
-package edu.school21.spring.service.repositories;
+package fr.fortytwo.spring.service.repositories;
 
-import edu.school21.spring.service.models.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.sql.DataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 
 @Component("usersRepositoryJdbc")
 public class UsersRepositoryJdbcImpl implements UsersRepository {

@@ -1,12 +1,11 @@
-package edu.school21.spring.service.services;
+package fr.fortytwo.spring.service.services;
 
-import edu.school21.spring.service.models.User;
-import edu.school21.spring.service.repositories.UsersRepository;
+import fr.fortytwo.spring.service.models.User;
+import fr.fortytwo.spring.service.repositories.UsersRepository;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-
-import java.util.UUID;
 
 @Component
 public class UsersServiceImpl implements UsersService {

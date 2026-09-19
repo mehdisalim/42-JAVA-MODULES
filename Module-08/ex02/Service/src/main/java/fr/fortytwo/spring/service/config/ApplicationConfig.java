@@ -1,17 +1,17 @@
-package edu.school21.spring.service.config;
+package fr.fortytwo.spring.service.config;
 
 import com.zaxxer.hikari.HikariDataSource;
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan("edu.school21.spring.service")
+@ComponentScan("fr.fortytwo.spring.service")
 @PropertySource("classpath:db.properties")
 public class ApplicationConfig {
 

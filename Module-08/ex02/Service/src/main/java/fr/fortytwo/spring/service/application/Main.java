@@ -1,7 +1,7 @@
-package edu.school21.spring.service.application;
+package fr.fortytwo.spring.service.application;
 
-import edu.school21.spring.service.config.ApplicationConfig;
-import edu.school21.spring.service.services.UsersService;
+import fr.fortytwo.spring.service.config.ApplicationConfig;
+import fr.fortytwo.spring.service.services.UsersService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

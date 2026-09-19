@@ -1,16 +1,13 @@
-package edu.school21.spring.service.config;
+package fr.fortytwo.spring.service.config;
 
+import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = "edu.school21.spring.service",
+@ComponentScan(basePackages = "fr.fortytwo.spring.service",
         excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = ApplicationConfig.class))
 public class TestApplicationConfig {
 
