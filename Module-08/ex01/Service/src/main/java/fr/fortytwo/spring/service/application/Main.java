@@ -1,6 +1,6 @@
-package edu.school21.spring.service.application;
+package fr.fortytwo.spring.service.application;
 
-import edu.school21.spring.service.repositories.UsersRepository;
+import fr.fortytwo.spring.service.repositories.UsersRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

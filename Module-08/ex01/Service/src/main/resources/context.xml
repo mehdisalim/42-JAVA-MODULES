@@ -23,11 +23,11 @@
         <property name="password" value="${db.password}"/>
     </bean>
 
-    <bean id="usersRepositoryJdbc" class="edu.school21.spring.service.repositories.UsersRepositoryJdbcImpl">
+    <bean id="usersRepositoryJdbc" class="fr.fortytwo.spring.service.repositories.UsersRepositoryJdbcImpl">
         <constructor-arg ref="driverManagerDataSource"/>
     </bean>
 
-    <bean id="usersRepositoryJdbcTemplate" class="edu.school21.spring.service.repositories.UsersRepositoryJdbcTemplateImpl">
+    <bean id="usersRepositoryJdbcTemplate" class="fr.fortytwo.spring.service.repositories.UsersRepositoryJdbcTemplateImpl">
         <constructor-arg ref="hikariDataSource"/>
     </bean>
 

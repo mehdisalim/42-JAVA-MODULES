@@ -1,4 +1,4 @@
-package edu.school21.spring.service.models;
+package fr.fortytwo.spring.service.models;
 
 public class User {
     private Long identifier;

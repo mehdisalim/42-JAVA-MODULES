@@ -1,11 +1,10 @@
-package edu.school21.spring.service.repositories;
+package fr.fortytwo.spring.service.repositories;
 
-import edu.school21.spring.service.models.User;
-import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.sql.DataSource;
 
 public class UsersRepositoryJdbcImpl implements UsersRepository {
     private final DataSource dataSource;
