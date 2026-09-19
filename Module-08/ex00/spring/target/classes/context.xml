@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1. PreProcessors -->
+    <bean id="preProcessorToUpper" class="PreProcessorToUpperImpl"/>
+    <bean id="preProcessorToLower" class="PreProcessorToLowerImpl"/>
+
+    <!-- 2. Renderers (depend on PreProcessor) -->
+    <bean id="rendererStandard" class="RendererStandardImpl">
+        <constructor-arg ref="preProcessorToUpper"/>
+    </bean>
+
+    <bean id="rendererErr" class="RendererErrImpl">
+        <constructor-arg ref="preProcessorToUpper"/>
+    </bean>
+
+    <!-- 3. Printers (depend on Renderer) -->
+    <bean id="printerWithPrefix" class="PrinterWithPrefixImpl">
+        <constructor-arg ref="rendererErr"/>
+        <property name="prefix" value="Prefix"/>
+    </bean>
+
+    <bean id="printerWithDateTime" class="PrinterWithDateTimeImpl">
+        <constructor-arg ref="rendererStandard"/>
+    </bean>
+
+</beans>
