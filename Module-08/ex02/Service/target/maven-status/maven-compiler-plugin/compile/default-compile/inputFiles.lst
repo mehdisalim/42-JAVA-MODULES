@@ -1,0 +1,8 @@
+D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\edu\school21\spring\service\config\ApplicationConfig.java
+D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\edu\school21\spring\service\models\User.java
+D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\edu\school21\spring\service\repositories\CrudRepository.java
+D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\edu\school21\spring\service\repositories\UsersRepository.java
+D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\edu\school21\spring\service\repositories\UsersRepositoryJdbcImpl.java
+D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\edu\school21\spring\service\repositories\UsersRepositoryJdbcTemplateImpl.java
+D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\edu\school21\spring\service\services\UsersService.java
+D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\edu\school21\spring\service\services\UsersServiceImpl.java
