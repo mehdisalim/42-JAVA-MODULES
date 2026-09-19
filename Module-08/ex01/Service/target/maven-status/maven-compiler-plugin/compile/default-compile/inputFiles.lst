@@ -1,0 +1,6 @@
+/Users/esalim/Desktop/Java-Modules/Module-08/ex01/Service/src/main/java/edu/school21/spring/service/application/Main.java
+/Users/esalim/Desktop/Java-Modules/Module-08/ex01/Service/src/main/java/edu/school21/spring/service/models/User.java
+/Users/esalim/Desktop/Java-Modules/Module-08/ex01/Service/src/main/java/edu/school21/spring/service/repositories/CrudRepository.java
+/Users/esalim/Desktop/Java-Modules/Module-08/ex01/Service/src/main/java/edu/school21/spring/service/repositories/UsersRepository.java
+/Users/esalim/Desktop/Java-Modules/Module-08/ex01/Service/src/main/java/edu/school21/spring/service/repositories/UsersRepositoryJdbcImpl.java
+/Users/esalim/Desktop/Java-Modules/Module-08/ex01/Service/src/main/java/edu/school21/spring/service/repositories/UsersRepositoryJdbcTemplateImpl.java
