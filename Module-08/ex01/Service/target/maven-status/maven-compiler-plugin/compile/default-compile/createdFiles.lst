@@ -1,9 +1,6 @@
 edu\school21\spring\service\models\User.class
 edu\school21\spring\service\repositories\UsersRepository.class
-edu\school21\spring\service\services\UsersServiceImpl.class
-edu\school21\spring\service\services\UsersService.class
 edu\school21\spring\service\repositories\CrudRepository.class
 edu\school21\spring\service\repositories\UsersRepositoryJdbcTemplateImpl.class
 edu\school21\spring\service\repositories\UsersRepositoryJdbcImpl.class
 edu\school21\spring\service\application\Main.class
-edu\school21\spring\service\config\ApplicationConfig.class

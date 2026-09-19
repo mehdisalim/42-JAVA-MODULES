@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.school21.spring.service.services.UsersServiceImplTest" time="1.166" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.school21.spring.service.services.UsersServiceImplTest" time="0.75" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\MEHDI SALIM\AppData\Local\Temp\surefire16822945495979145939\surefirebooter-20260919184448271_3.jar C:\Users\MEHDI SALIM\AppData\Local\Temp\surefire16822945495979145939 2026-09-19T18-44-47_669-jvmRun1 surefire-20260919184448271_1tmp surefire_0-20260919184448271_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\MEHDI SALIM\AppData\Local\Temp\surefire7191398919073673601\surefirebooter-20260919185236654_3.jar C:\Users\MEHDI SALIM\AppData\Local\Temp\surefire7191398919073673601 2026-09-19T18-52-36_447-jvmRun1 surefire-20260919185236654_1tmp surefire_0-20260919185236654_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\42-JAVA-MODULES\Module-08\ex02\Service\target\test-classes;D:\42-JAVA-MODULES\Module-08\ex02\Service\target\classes;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-context\5.3.31\spring-context-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-aop\5.3.31\spring-aop-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-beans\5.3.31\spring-beans-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-core\5.3.31\spring-core-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-jcl\5.3.31\spring-jcl-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-expression\5.3.31\spring-expression-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-jdbc\5.3.31\spring-jdbc-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-tx\5.3.31\spring-tx-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\postgresql\postgresql\42.6.0\postgresql-42.6.0.jar;C:\Users\MEHDI SALIM\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\MEHDI SALIM\.m2\repository\com\zaxxer\HikariCP\4.0.3\HikariCP-4.0.3.jar;C:\Users\MEHDI SALIM\.m2\repository\org\slf4j\slf4j-api\2.0.0-alpha1\slf4j-api-2.0.0-alpha1.jar;C:\Users\MEHDI SALIM\.m2\repository\org\hsqldb\hsqldb\2.7.2\hsqldb-2.7.2.jar;C:\Users\MEHDI SALIM\.m2\repository\org\springframework\spring-test\5.3.31\spring-test-5.3.31.jar;C:\Users\MEHDI SALIM\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\MEHDI SALIM\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\MEHDI SALIM\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\MEHDI SALIM\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MEHDI SALIM\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\MEHDI SALIM\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\MEHDI SALIM\.m2\repository\org\slf4j\slf4j-nop\1.7.36\slf4j-nop-1.7.36.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\MEHDI SALIM\AppData\Local\Temp\surefire16822945495979145939\surefirebooter-20260919184448271_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\MEHDI SALIM\AppData\Local\Temp\surefire7191398919073673601\surefirebooter-20260919185236654_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.10+7-LTS"/>
@@ -59,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testSignUp" classname="edu.school21.spring.service.services.UsersServiceImplTest" time="1.137">
+  <testcase name="testSignUp" classname="edu.school21.spring.service.services.UsersServiceImplTest" time="0.725">
     <system-err><![CDATA[SLF4J: No SLF4J providers were found.
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#noProviders for further details.
