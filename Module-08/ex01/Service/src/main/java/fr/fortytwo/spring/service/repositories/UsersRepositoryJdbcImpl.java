@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import javax.sql.DataSource;
 
+import fr.fortytwo.spring.service.models.User;
+
 public class UsersRepositoryJdbcImpl implements UsersRepository {
     private final DataSource dataSource;
 

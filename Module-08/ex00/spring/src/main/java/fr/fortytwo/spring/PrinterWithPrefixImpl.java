@@ -1,7 +1,4 @@
-package fr.fortytwo.spring.impl;
-
-import fr.fortytwo.spring.Printer;
-import fr.fortytwo.spring.Renderer;
+package fr.fortytwo.spring;
 
 public class PrinterWithPrefixImpl implements Printer {
 

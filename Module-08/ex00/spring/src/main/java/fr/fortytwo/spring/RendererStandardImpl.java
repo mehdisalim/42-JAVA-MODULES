@@ -1,14 +1,11 @@
-package fr.fortytwo.spring.impl;
+package fr.fortytwo.spring;
 
-import fr.fortytwo.spring.Renderer;
-import fr.fortytwo.spring.PreProcessor;
-
-public class RendererStandardImpl implements Renderer{
+public class RendererStandardImpl implements Renderer {
 
     final private PreProcessor preProcessor;
 
     public RendererStandardImpl(final PreProcessor preProcessor) {
-        this.preProcessor =  preProcessor;
+        this.preProcessor = preProcessor;
     }
 
     @Override

@@ -1,7 +1,4 @@
-package fr.fortytwo.spring.impl;
-
-import fr.fortytwo.spring.PreProcessor;
-
+package fr.fortytwo.spring;
 
 public class PreProcessorToLowerImpl implements PreProcessor {
 

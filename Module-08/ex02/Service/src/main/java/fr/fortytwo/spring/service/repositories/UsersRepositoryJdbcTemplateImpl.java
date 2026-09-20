@@ -14,7 +14,6 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 
-
 @Component("usersRepositoryJdbcTemplate")
 public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
     private final JdbcTemplate jdbcTemplate;
@@ -24,8 +23,8 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    private final RowMapper<User> userRowMapper = (rs, rowNum) ->
-            new User(rs.getLong("identifier"), rs.getString("email"), rs.getString("password"));
+    private final RowMapper<User> userRowMapper = (rs, rowNum) -> new User(rs.getLong("identifier"),
+            rs.getString("email"), rs.getString("password"));
 
     @Override
     public User findById(Long id) {
@@ -42,7 +41,8 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
     public void save(User entity) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO users (email, password) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO users (email, password) VALUES (?, ?)",
+                    Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, entity.getEmail());
             ps.setString(2, entity.getPassword());
             return ps;
@@ -54,7 +54,8 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
 
     @Override
     public void update(User entity) {
-        jdbcTemplate.update("UPDATE users SET email = ?, password = ? WHERE identifier = ?", entity.getEmail(), entity.getPassword(), entity.getIdentifier());
+        jdbcTemplate.update("UPDATE users SET email = ?, password = ? WHERE identifier = ?", entity.getEmail(),
+                entity.getPassword(), entity.getIdentifier());
     }
 
     @Override

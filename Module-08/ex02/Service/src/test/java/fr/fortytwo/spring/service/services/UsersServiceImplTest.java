@@ -1,7 +1,7 @@
 package fr.fortytwo.spring.service.services;
 
-import edu.school21.spring.service.config.TestApplicationConfig;
-import edu.school21.spring.service.services.UsersService;
+import fr.fortytwo.spring.service.config.TestApplicationConfig;
+import fr.fortytwo.spring.service.services.UsersService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,7 +12,8 @@ public class UsersServiceImplTest {
 
     @Test
     public void testSignUp() {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(TestApplicationConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+                TestApplicationConfig.class);
         UsersService usersService = context.getBean(UsersService.class);
 
         String password = usersService.signUp("test@example.com");

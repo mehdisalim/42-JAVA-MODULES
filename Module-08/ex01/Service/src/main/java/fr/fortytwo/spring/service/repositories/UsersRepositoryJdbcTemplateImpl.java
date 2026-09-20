@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
+import fr.fortytwo.spring.service.models.User;
+
 
 public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
     private final JdbcTemplate jdbcTemplate;

@@ -1,6 +1,5 @@
-package fr.fortytwo.spring.impl;
+package fr.fortytwo.spring;
 
-import fr.fortytwo.spring.PreProcessor;
 
 
 public class PreProcessorToUpperImpl implements PreProcessor {

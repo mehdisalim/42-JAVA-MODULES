@@ -6,8 +6,11 @@ import java.util.List;
 import java.util.Optional;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+
+import fr.fortytwo.spring.service.models.User;
 
 @Component("usersRepositoryJdbc")
 public class UsersRepositoryJdbcImpl implements UsersRepository {
@@ -21,11 +24,12 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public User findById(Long id) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE identifier = ?")) {
+                PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE identifier = ?")) {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new User(resultSet.getLong("identifier"), resultSet.getString("email"), resultSet.getString("password"));
+                return new User(resultSet.getLong("identifier"), resultSet.getString("email"),
+                        resultSet.getString("password"));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -37,10 +41,11 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
-             Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT * FROM users")) {
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM users")) {
             while (resultSet.next()) {
-                users.add(new User(resultSet.getLong("identifier"), resultSet.getString("email"), resultSet.getString("password")));
+                users.add(new User(resultSet.getLong("identifier"), resultSet.getString("email"),
+                        resultSet.getString("password")));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -51,7 +56,8 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public void save(User entity) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("INSERT INTO users (email, password) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS)) {
+                PreparedStatement statement = connection.prepareStatement(
+                        "INSERT INTO users (email, password) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, entity.getEmail());
             statement.setString(2, entity.getPassword());
             statement.executeUpdate();
@@ -67,7 +73,8 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public void update(User entity) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE users SET email = ?, password = ? WHERE identifier = ?")) {
+                PreparedStatement statement = connection
+                        .prepareStatement("UPDATE users SET email = ?, password = ? WHERE identifier = ?")) {
             statement.setString(1, entity.getEmail());
             statement.setString(2, entity.getPassword());
             statement.setLong(3, entity.getIdentifier());
@@ -80,7 +87,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public void delete(Long id) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("DELETE FROM users WHERE identifier = ?")) {
+                PreparedStatement statement = connection.prepareStatement("DELETE FROM users WHERE identifier = ?")) {
             statement.setLong(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -91,11 +98,12 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public Optional<User> findByEmail(String email) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE email = ?")) {
+                PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE email = ?")) {
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return Optional.of(new User(resultSet.getLong("identifier"), resultSet.getString("email"), resultSet.getString("password")));
+                return Optional.of(new User(resultSet.getLong("identifier"), resultSet.getString("email"),
+                        resultSet.getString("password")));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());

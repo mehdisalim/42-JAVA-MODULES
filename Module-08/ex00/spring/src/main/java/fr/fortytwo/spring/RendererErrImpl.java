@@ -1,7 +1,4 @@
-package fr.fortytwo.spring.impl;
-
-import fr.fortytwo.spring.PreProcessor;
-import fr.fortytwo.spring.Renderer;
+package fr.fortytwo.spring;
 
 public class RendererErrImpl implements Renderer{
 
