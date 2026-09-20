@@ -14,6 +14,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 
+
 @Component("usersRepositoryJdbcTemplate")
 public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
     private final JdbcTemplate jdbcTemplate;
@@ -23,12 +24,12 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    private final RowMapper<User> userRowMapper = (rs, rowNum) -> new User(rs.getLong("identifier"),
+    private final RowMapper<User> userRowMapper = (rs, rowNum) -> new User(rs.getLong("id"),
             rs.getString("email"), rs.getString("password"));
 
     @Override
     public User findById(Long id) {
-        List<User> users = jdbcTemplate.query("SELECT * FROM users WHERE identifier = ?", userRowMapper, id);
+        List<User> users = jdbcTemplate.query("SELECT * FROM users WHERE id = ?", userRowMapper, id);
         return users.isEmpty() ? null : users.get(0);
     }
 
@@ -47,20 +48,24 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
             ps.setString(2, entity.getPassword());
             return ps;
         }, keyHolder);
-        if (keyHolder.getKey() != null) {
-            entity.setIdentifier(keyHolder.getKey().longValue());
+        Number id = keyHolder.getKeys().get("id") instanceof Number
+        ? (Number) keyHolder.getKeys().get("id")
+        : null;
+
+        if (id != null) {
+            entity.setId(id.longValue());
         }
     }
 
     @Override
     public void update(User entity) {
-        jdbcTemplate.update("UPDATE users SET email = ?, password = ? WHERE identifier = ?", entity.getEmail(),
-                entity.getPassword(), entity.getIdentifier());
+        jdbcTemplate.update("UPDATE users SET email = ?, password = ? WHERE id = ?", entity.getEmail(),
+                entity.getPassword(), entity.getId());
     }
 
     @Override
     public void delete(Long id) {
-        jdbcTemplate.update("DELETE FROM users WHERE identifier = ?", id);
+        jdbcTemplate.update("DELETE FROM users WHERE id = ?", id);
     }
 
     @Override

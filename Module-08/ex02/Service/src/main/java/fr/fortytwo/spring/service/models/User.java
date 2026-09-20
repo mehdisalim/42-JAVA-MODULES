@@ -1,25 +1,25 @@
 package fr.fortytwo.spring.service.models;
 
 public class User {
-    private Long identifier;
+    private Long id;
     private String email;
     private String password;
 
     public User() {
     }
 
-    public User(Long identifier, String email, String password) {
-        this.identifier = identifier;
+    public User(Long id, String email, String password) {
+        this.id = id;
         this.email = email;
         this.password = password;
     }
 
-    public Long getIdentifier() {
-        return identifier;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdentifier(Long identifier) {
-        this.identifier = identifier;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -41,7 +41,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "identifier=" + identifier +
+                "id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';

@@ -1,12 +1,12 @@
 package fr.fortytwo.spring.service.repositories;
 
+import fr.fortytwo.spring.service.models.User;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.sql.DataSource;
 
-import fr.fortytwo.spring.service.models.User;
 
 public class UsersRepositoryJdbcImpl implements UsersRepository {
     private final DataSource dataSource;
@@ -18,11 +18,11 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public User findById(Long id) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE identifier = ?")) {
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE id = ?")) {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new User(resultSet.getLong("identifier"), resultSet.getString("email"));
+                return new User(resultSet.getLong("id"), resultSet.getString("email"));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -37,7 +37,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery("SELECT * FROM users")) {
             while (resultSet.next()) {
-                users.add(new User(resultSet.getLong("identifier"), resultSet.getString("email")));
+                users.add(new User(resultSet.getLong("id"), resultSet.getString("email")));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -53,7 +53,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
             statement.executeUpdate();
             ResultSet keys = statement.getGeneratedKeys();
             if (keys.next()) {
-                entity.setIdentifier(keys.getLong(1));
+                entity.setId(keys.getLong(1));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -63,9 +63,9 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public void update(User entity) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE users SET email = ? WHERE identifier = ?")) {
+             PreparedStatement statement = connection.prepareStatement("UPDATE users SET email = ? WHERE id = ?")) {
             statement.setString(1, entity.getEmail());
-            statement.setLong(2, entity.getIdentifier());
+            statement.setLong(2, entity.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -75,7 +75,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public void delete(Long id) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("DELETE FROM users WHERE identifier = ?")) {
+             PreparedStatement statement = connection.prepareStatement("DELETE FROM users WHERE id = ?")) {
             statement.setLong(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -90,7 +90,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return Optional.of(new User(resultSet.getLong("identifier"), resultSet.getString("email")));
+                return Optional.of(new User(resultSet.getLong("id"), resultSet.getString("email")));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());

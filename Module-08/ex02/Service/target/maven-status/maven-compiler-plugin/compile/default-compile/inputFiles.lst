@@ -1,9 +1,0 @@
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\application\Main.java
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\config\ApplicationConfig.java
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\models\User.java
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\repositories\CrudRepository.java
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\repositories\UsersRepository.java
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\repositories\UsersRepositoryJdbcImpl.java
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\repositories\UsersRepositoryJdbcTemplateImpl.java
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\services\UsersService.java
-D:\42-JAVA-MODULES\Module-08\ex02\Service\src\main\java\fr\fortytwo\spring\service\services\UsersServiceImpl.java

@@ -1,16 +1,16 @@
 package fr.fortytwo.spring.service.repositories;
 
+import fr.fortytwo.spring.service.models.User;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 
-import fr.fortytwo.spring.service.models.User;
 
 @Component("usersRepositoryJdbc")
 public class UsersRepositoryJdbcImpl implements UsersRepository {
@@ -24,11 +24,11 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public User findById(Long id) {
         try (Connection connection = dataSource.getConnection();
-                PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE identifier = ?")) {
+                PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE id = ?")) {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new User(resultSet.getLong("identifier"), resultSet.getString("email"),
+                return new User(resultSet.getLong("id"), resultSet.getString("email"),
                         resultSet.getString("password"));
             }
         } catch (SQLException e) {
@@ -44,7 +44,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM users")) {
             while (resultSet.next()) {
-                users.add(new User(resultSet.getLong("identifier"), resultSet.getString("email"),
+                users.add(new User(resultSet.getLong("id"), resultSet.getString("email"),
                         resultSet.getString("password")));
             }
         } catch (SQLException e) {
@@ -63,7 +63,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
             statement.executeUpdate();
             ResultSet keys = statement.getGeneratedKeys();
             if (keys.next()) {
-                entity.setIdentifier(keys.getLong(1));
+                entity.setId(keys.getLong(1));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -74,10 +74,10 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     public void update(User entity) {
         try (Connection connection = dataSource.getConnection();
                 PreparedStatement statement = connection
-                        .prepareStatement("UPDATE users SET email = ?, password = ? WHERE identifier = ?")) {
+                        .prepareStatement("UPDATE users SET email = ?, password = ? WHERE id = ?")) {
             statement.setString(1, entity.getEmail());
             statement.setString(2, entity.getPassword());
-            statement.setLong(3, entity.getIdentifier());
+            statement.setLong(3, entity.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -87,7 +87,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public void delete(Long id) {
         try (Connection connection = dataSource.getConnection();
-                PreparedStatement statement = connection.prepareStatement("DELETE FROM users WHERE identifier = ?")) {
+                PreparedStatement statement = connection.prepareStatement("DELETE FROM users WHERE id = ?")) {
             statement.setLong(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -102,7 +102,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return Optional.of(new User(resultSet.getLong("identifier"), resultSet.getString("email"),
+                return Optional.of(new User(resultSet.getLong("id"), resultSet.getString("email"),
                         resultSet.getString("password")));
             }
         } catch (SQLException e) {
