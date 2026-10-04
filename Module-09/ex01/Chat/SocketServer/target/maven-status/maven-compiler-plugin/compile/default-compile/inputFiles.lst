@@ -1,0 +1,15 @@
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\app\Main.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\config\SocketsApplicationConfig.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\models\Message.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\models\User.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\repositories\CrudRepository.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\repositories\MessagesRepository.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\repositories\MessagesRepositoryImpl.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\repositories\UsersRepository.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\repositories\UsersRepositoryImpl.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\server\ClientHandler.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\server\Server.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\services\MessagesService.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\services\MessagesServiceImpl.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\services\UsersService.java
+D:\42-JAVA-MODULES\Module-09\ex01\Chat\SocketServer\src\main\java\fr\fortytwo\sockets\services\UsersServiceImpl.java
