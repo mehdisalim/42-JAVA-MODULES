@@ -17,7 +17,7 @@ public class RoomsRepositoryImpl implements RoomsRepository {
     @Autowired
     public RoomsRepositoryImpl(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
-        initDatabase();
+//        initDatabase();
     }
 
     private void initDatabase() {

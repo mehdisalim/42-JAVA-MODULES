@@ -17,7 +17,7 @@ public class MessagesRepositoryImpl implements MessagesRepository {
     @Autowired
     public MessagesRepositoryImpl(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
-        initDatabase();
+//        initDatabase();
     }
 
     private void initDatabase() {

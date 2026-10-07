@@ -1,9 +1,0 @@
-fr\fortytwo\sockets\repositories\UsersRepository.class
-fr\fortytwo\sockets\app\Main.class
-fr\fortytwo\sockets\repositories\CrudRepository.class
-fr\fortytwo\sockets\server\Server.class
-fr\fortytwo\sockets\repositories\UsersRepositoryImpl.class
-fr\fortytwo\sockets\services\UsersServiceImpl.class
-fr\fortytwo\sockets\models\User.class
-fr\fortytwo\sockets\services\UsersService.class
-fr\fortytwo\sockets\config\SocketsApplicationConfig.class

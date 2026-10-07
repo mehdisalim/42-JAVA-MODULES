@@ -22,12 +22,6 @@ public class Server {
             while (true) {
                 Socket socket = serverSocket.accept();
                 handleClient(socket);
-                // "Server shall support connecting a single client". Let's assume it breaks after handling one.
-                // Wait, it says "Server shall support connecting a single client and be made as a separate Maven project." 
-                // Maybe it means it just doesn't need multithreading? "support connecting a single client" implies 
-                // no threads are needed, it just handles one at a time. I'll just not break, so we can test multiple clients one after another.
-                // Actually the requirement says "Server shall support connecting a single client", which implies no multi-user chat yet.
-                // So looping is fine.
             }
         } catch (IOException e) {
             e.printStackTrace();

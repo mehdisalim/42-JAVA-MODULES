@@ -16,7 +16,7 @@ public class UsersRepositoryImpl implements UsersRepository {
     @Autowired
     public UsersRepositoryImpl(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
-        initDatabase();
+//        initDatabase();
     }
     
     private void initDatabase() {

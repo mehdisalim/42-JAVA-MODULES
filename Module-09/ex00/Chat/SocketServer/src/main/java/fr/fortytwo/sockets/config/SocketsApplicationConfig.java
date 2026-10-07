@@ -43,4 +43,9 @@ public class SocketsApplicationConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+    @Bean
+    public DatabaseInitializer databaseInitializer(DataSource dataSource) {
+        return new DatabaseInitializer(dataSource);
+    }
 }

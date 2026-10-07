@@ -22,7 +22,7 @@ public class Client {
              PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
              Scanner scanner = new Scanner(System.in)) {
 
-            // Step 1: Authentication / registration phase
+
             while (true) {
                 String serverMessage = reader.readLine();
                 if (serverMessage == null) {
@@ -48,7 +48,6 @@ public class Client {
                 writer.println(userInput);
             }
 
-            // Step 2: Messaging phase
             Thread listenerThread = new Thread(() -> {
                 try {
                     String line;

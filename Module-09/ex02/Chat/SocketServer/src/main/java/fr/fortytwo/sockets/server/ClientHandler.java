@@ -23,7 +23,6 @@ public class ClientHandler implements Runnable {
     private final ObjectMapper mapper = new ObjectMapper();
     private PrintWriter writer;
     
-    // Global list of active handlers to broadcast messages
     private static final ConcurrentHashMap<Long, ClientHandler> activeClients = new ConcurrentHashMap<>();
 
     private User currentUser = null;
